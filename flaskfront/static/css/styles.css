@@ -61,6 +61,11 @@
     align-items: center;
 }
 
+#txtbox {
+    width: 100%;
+    border: none;
+}
+
 .url {
     left: 18.43%;
     right: 57.63%;
@@ -79,9 +84,20 @@
 }
 
 .study-guide {
-    padding: 5%;
+    padding: 3%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+.study-guide input {
+    width: 27%;
+}
+
+#myTable {
+    padding-top: 5%;
+    height: auto;
+    text-align: center;
+    font-family: Lexend Deca;
 }

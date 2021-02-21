@@ -20,6 +20,21 @@
                 <div class="box-container">
                     <!-- contents of box -->
                     <div class="innerbox">
+                        Upload PDF
+                    </div>
+                    <div class="upload">
+                            <input type="file" id="actual-btn" hidden/>
+                            <label for="actual-btn">
+                                <img src="{{url_for('static', filename='sources/upload.png')}}" />
+                            </label>
+                            <!--  -->
+                        <!-- <img src="./sources/upload.png"> -->
+                    </div>
+                </div>
+                <!-- upload link -->
+                <div class="box-container">
+                    <!-- contents of box -->
+                    <div class="innerbox">
                         Upload PDF Link
                     </div>
                     <div class="upload">
@@ -34,17 +49,6 @@
                                 <button type="button" id="button" onclick="getURL()">add file</button>
                             </div> -->
                         </div>
-                    </div>
-                </div>
-                <!-- upload link -->
-                <div class="box-container">
-                    <!-- contents of box -->
-                    <div class="innerbox">
-                       Files Uploaded
-                    </div>
-                    <div class="files">
-                        <table id="myTable">
-                        </table>
                     </div>
                 </div>
             </div>
@@ -65,7 +69,6 @@
 
         function getURL() { 
             let urlText = document.getElementById("txtbox").value;
-            let table = document.getElementById("myTable");
 
             fetch("/add", {
                 method: "post",
@@ -77,9 +80,6 @@
             .then (function (response) {
                 return response.json();
             }).then(function (text) {
-                var row = table.insertRow(0);
-                var cell = row.insertCell(0);
-                cell.innerHTML = urlText.substring(0, 45);;
                 console.log('GET response:');
                 console.log(text.greeting); 
             });

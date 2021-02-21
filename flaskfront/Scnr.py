@@ -1,5 +1,4 @@
 import os
-import nltk
 from smmryapi import SmmryAPI
 
 sm = SmmryAPI('61917EE288')
