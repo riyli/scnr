@@ -23,7 +23,7 @@ class Scnr:
             none
         """
         
-        s = SmmryAPI('61917EE288').summarize(url, sm_length = 5)
+        s = sm.summarize(url, sm_length = 5)
         self.summaries[s.sm_api_title] = s.sm_api_content
         self.titles.append(s.sm_api_title)
         
@@ -42,9 +42,15 @@ class Scnr:
         self.count += 1
         self.smmrize(url)
     
-    def format_summary(self): # just to show it better
+    def format_summary(self): # just to show it better (for testing)
         """
         for testing print statements, just summary number, title, and content
+        
+        args:
+            none
+            
+        returns:
+            none
         """
         
         for i, s in enumerate(self.summaries):
@@ -60,6 +66,9 @@ class Scnr:
 
         args:
             i (int): index of article (1-indexed) to be removed from the study guide
+            
+        returns:
+            none
         """
         
         if i <= len(self.urls):
@@ -69,3 +78,42 @@ class Scnr:
             self.summaries = { k:v for k,v in self.summaries.items() if k is not self.titles[i-1] }
             del self.titles[i-1]
             self.count -= 1
+            
+    def to_latex(self):
+        """
+        turns summary dict into latex code for the pdf
+        
+        args:
+            none
+
+        returns:
+            lat (str): latex code to generate pdf
+        """
+        
+        lat = str()
+        
+        lat = "\\documentclass{article}\n\\usepackage{natbib}\n\\usepackage{graphicx}\
+            \n\\usepackage[a4paper, total={6.5in, 9.25in}]{geometry}\n\\begin{document}\
+            \n\n"
+            
+        for article in self.summaries:
+            
+            lat += "\\section" + "{" + article + "}" + "\n"
+            lat += self.summaries[article].replace("%", "\\%")
+            lat += "\n\n"
+            
+        lat += "\\end{document}"
+        
+        return lat
+    
+    def to_pdf(self):
+        """
+        creates pdf from to_latex()
+        """
+        
+        f = open("demo.tex", "w")
+        f.write(self.to_latex())
+        f.close()
+        
+        os.system("pdflatex demo.tex")
+
