@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <title>SCNR</title>
         <link rel="stylesheet" href="./styles.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
     </head>
     </header>
     <body>
@@ -16,20 +18,34 @@
             <!-- upload -->
             <div class="pdf-container">
                 <!-- upload pdf -->
-                <div class="box">
-                    <div class="box-container">
-                        <!-- contents of box -->
-                        <div>
-                            test
-                        </div>
+                <div class="box-container">
+                    <!-- contents of box -->
+                    <div class="innerbox">
+                        Upload PDF
+                    </div>
+                    <div class="upload">
+                            <input type="file" id="actual-btn" hidden/>
+                            <label for="actual-btn">
+                                <img src="./sources/upload.png">
+                            </label>
+                            <!--  -->
+                        <!-- <img src="./sources/upload.png"> -->
                     </div>
                 </div>
                 <!-- upload link -->
-                <div class="box">
-                    <div class="box-container">
-                        <!-- contents of box -->
-                        <div>
-                            test
+                <div class="box-container">
+                    <!-- contents of box -->
+                    <div class="innerbox">
+                        Upload PDF Link
+                    </div>
+                    <div class="upload">
+                        <div class="url-box">
+                            <div>
+                                <img src="./sources/search.png">
+                            </div>
+                            <div class="url">
+                                <input type="text" placeholder="input url here">
+                            </div>
                         </div>
                     </div>
                 </div>

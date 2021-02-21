@@ -19,14 +19,69 @@
     justify-content: center;
 }
 
-.box {
-    padding: 10em 13em;
+.box-container {
+    display: flex;
+    height: 300px;
+    width: 300px;
+    padding: 1em 6em 0em 6em;
     background: #F1FAEE;
     border-radius: 45px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.innerbox {
+    font-family: Lexend Deca;
+    font-size: 25px;
     text-align: center;
+    background-color: white;
+    position: relative;
+    border-radius: 45px;
+    vertical-align: middle;
+    padding: 0.5em 1em;
+}
+
+.upload {
+    font-family: Lexend Deca;
+    font-size: 18px;
+    position: relative;
+    vertical-align: middle;
+    padding: 2em 5em;
+}
+
+.url-box {
+    display: flex;
+    width: 426px;
+    height: 64px;
+    left: 39px;
+    top: 218px;
+    background: #FFFFFF;
+    border-radius: 45px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.url {
+    left: 18.43%;
+    right: 57.63%;
+    top: 54.07%;
+    bottom: 39.12%;
+    border-bottom: 0.5px solid;
+    width: 75%;
+    display: block;
+
+    font-family: Lexend Deca;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .study-guide {
     padding: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
 }
