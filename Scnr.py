@@ -1,4 +1,5 @@
 import os
+# import nltk
 from smmryapi import SmmryAPI
 
 sm = SmmryAPI('61917EE288')
@@ -7,7 +8,7 @@ class Scnr:
     
     def __init__(self):
         
-        self.count = 0
+        self.count = int()
         self.summaries = dict()
         self.urls = list()
         self.titles = list()
@@ -116,4 +117,3 @@ class Scnr:
         f.close()
         
         os.system("pdflatex demo.tex")
-

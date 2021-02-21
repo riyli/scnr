@@ -1,0 +1,1 @@
+/usr/local/Cellar/python@3.9/3.9.1_8/Frameworks/Python.framework/Versions/3.9/lib/python3.9/ntpath.py
