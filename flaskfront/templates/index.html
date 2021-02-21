@@ -89,7 +89,12 @@
         pdfbutton.addEventListener("click", genPDF);
 
         function genPDF() {
-
+        fetch("/gen")
+            .then(function (response) {
+            return response.json();
+        }).then(function (text) {
+            console.log('GET response:');
+        });
         }
         
         </script>
