@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scnr</title>
+</head>
+<body>
+    <h1>scnr</h1>
+    <button onclick="myFunction()">Click me</button>
+
+    <script>
+    function myFunction() {
+    fetch("/test")
+          .then(function (response) {
+          return response.json();
+      }).then(function (text) {
+          console.log('GET response:');
+          console.log(text.greeting); 
+      });
+    }
+    </script>
+</body>
+</html>
